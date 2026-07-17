@@ -3,7 +3,7 @@ import re
 
 app = Flask(__name__)
 
-@app.route("/Email", methods=["GET","POST"])
+@app.route("/", methods=["GET","POST"])
 def home():
 
     result=""
