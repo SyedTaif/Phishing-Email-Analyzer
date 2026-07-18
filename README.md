@@ -47,11 +47,11 @@ Phishing Email Analyzer is a Flask-based cybersecurity tool that analyzes email 
 
 ### 🏠 Home Page
 
-![Home](screenshots/home.png)
+![Home](screenshots/Home.png)
 
 ### 🔍 Analysis Result
 
-![Result](screenshots/result.png)
+![Result](screenshots/Result.png)
 
 ---
 
