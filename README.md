@@ -1,41 +1,61 @@
-# 📧 Phishing Email Analyzer
+<h1 align="center">📧 Phishing Email Analyzer</h1>
 
-A Flask-based Phishing Email Analyzer that identifies suspicious email content by detecting phishing keywords, embedded URLs, and calculating a phishing risk score.
+<p align="center">
+A Python & Flask based web application that analyzes email content to identify phishing indicators such as suspicious keywords and malicious links, then calculates a phishing risk score.
+</p>
+
+<p align="center">
+
+<a href="https://python.org">
+<img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python">
+</a>
+
+<a href="https://flask.palletsprojects.com/">
+<img src="https://img.shields.io/badge/Flask-Web_App-black?style=for-the-badge&logo=flask">
+</a>
+
+<a href="https://phishing-email-analyzer-5lbf.onrender.com">
+<img src="https://img.shields.io/badge/🌐_Live_Demo-Visit-success?style=for-the-badge">
+</a>
+
+<a href="LICENSE">
+<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
+</a>
+
+</p>
 
 ---
 
-## 📌 Overview
+# 📌 Overview
 
-Phishing attacks are one of the most common cyber threats. This project helps users analyze suspicious emails by checking for commonly used phishing keywords and detecting embedded URLs to estimate the likelihood of a phishing attempt.
+Phishing Email Analyzer is a Flask-based cybersecurity tool that analyzes email content for common phishing indicators. It detects suspicious keywords, identifies embedded URLs, calculates a phishing risk score, and classifies emails into different risk levels.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
 - ✅ Suspicious Keyword Detection
-- ✅ Embedded URL Detection
+- ✅ URL Detection
 - ✅ Phishing Risk Score Calculation
 - ✅ Low / Medium / High Risk Classification
 - ✅ Clean & Responsive User Interface
-- ✅ Built using Python & Flask
+- ✅ Built with Python & Flask
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshots
 
 ### 🏠 Home Page
 
 ![Home](screenshots/home.png)
 
----
-
-### 🚨 Email Analysis Result
+### 🔍 Analysis Result
 
 ![Result](screenshots/result.png)
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 - Python
 - Flask
@@ -45,107 +65,98 @@ Phishing attacks are one of the most common cyber threats. This project helps us
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
-phishing-email-analyzer/
+Phishing-Email-Analyzer/
 │
 ├── app.py
 ├── requirements.txt
 ├── README.md
-│
+├── LICENSE
 ├── screenshots/
-│     ├── home.png
-│     └── result.png
-│
+│   ├── home.png
+│   └── result.png
 ├── templates/
-│     └── phishing.html
-│
+│   └── phishing.html
 └── static/
-      └── style.css
+    └── style.css
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-Clone the repository
-
-```bash
-git clone https://github.com/SyedTaif/phishing-email-analyzer.git
-```
-
-Move into the project directory
+### Clone the repository
 
 ```bash
-cd phishing-email-analyzer
+git clone https://github.com/SyedTaif/Phishing-Email-Analyzer.git
 ```
 
-Install dependencies
+### Navigate to the project directory
+
+```bash
+cd Phishing-Email-Analyzer
+```
+
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application
+### Run the application
 
 ```bash
 python app.py
 ```
 
-Open your browser
+### Open in your browser
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-## 🔍 How It Works
+# 🚀 Live Demo
 
-The analyzer performs the following checks:
-
-- Detects phishing-related keywords
-- Detects embedded URLs
-- Assigns a risk score
-- Classifies emails as:
-  - 🟢 Low Risk
-  - 🟡 Medium Risk
-  - 🔴 High Risk
+🌐 https://phishing-email-analyzer-5lbf.onrender.com
 
 ---
 
-## 📈 Sample Analysis
+# 🔍 Detection Logic
 
-| Detected Items | Risk Score | Risk Level |
-|---------------|-----------:|-----------|
-| No Suspicious Content | 0–30 | 🟢 Low |
-| Few Keywords | 31–70 | 🟡 Medium |
-| Multiple Keywords + URL | 71–100 | 🔴 High |
+The application analyzes email content using:
+
+- Suspicious keyword matching
+- URL extraction using Regular Expressions (Regex)
+- Risk score calculation
+- Risk classification (Low / Medium / High)
 
 ---
 
-## 🔮 Future Improvements
+# 🔮 Future Improvements
 
-- Machine Learning Based Detection
-- AI-Powered Email Classification
-- Attachment Analysis
+- Sender Email Verification
 - Domain Reputation Check
-- Sender Reputation Analysis
-- Real-time Threat Intelligence Integration
+- Attachment Analysis
+- Machine Learning Detection
+- Email Header Analysis
+- VirusTotal API Integration
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Syed Taif Ahmed**
 
-GitHub: https://github.com/SyedTaif
+🌐 GitHub: https://github.com/SyedTaif
 
-LinkedIn: https://www.linkedin.com/in/syed-taif-ahmed-ba8a683bb/
-
-Portfolio: https://portfolio-rho-topaz-x4owcm1yim.vercel.app/
+💼 LinkedIn: https://www.linkedin.com/in/syed-taif-ahmed-ba8a683bb/
 
 ---
 
-⭐ If you found this project useful, consider giving it a star.
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
