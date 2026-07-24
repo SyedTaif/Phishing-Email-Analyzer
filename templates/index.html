@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phishing Email Analyzer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="header">
+
+            <h1>🎣 Phishing Email Analyzer</h1>
+
+            <p class="subtitle">
+                Detect phishing emails using keyword analysis, suspicious URL detection and security recommendations.
+            </p>
+
+        </div>
+
+        <form method="POST">
+
+            <label for="email_content">
+                Paste Email Content
+            </label>
+
+            <textarea
+                id="email_content"
+                name="email_content"
+                placeholder="Paste the email content here..."
+                required>{{ request.form.get('email_content','') }}</textarea>
+
+            <div class="counter">
+
+                <span id="charCount">0</span> Characters
+
+            </div>
+
+            <button type="submit" id="analyzeBtn">
+
+                🔍 Analyze Email
+
+            </button>
+
+        </form>
+
+        {% if result %}
+
+        <div class="result-card">
+
+            <div class="badge
+                {% if threat_level == 'High' %}
+                    danger
+                {% elif threat_level == 'Medium' %}
+                    warning
+                {% else %}
+                    success
+                {% endif %}
+            ">
+
+                {{ result }}
+
+            </div>
+
+            <div class="score">
+
+                <span>Risk Score</span>
+
+                <span>{{ risk_score }} / 100</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div
+                    class="progress-bar"
+                    style="width: {{ risk_score }}%;">
+
+                </div>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Threat Level</h3>
+
+                <p>
+
+                    {% if threat_level == "High" %}
+
+                        🔴 High
+
+                    {% elif threat_level == "Medium" %}
+
+                        🟠 Medium
+
+                    {% else %}
+
+                        🟢 Low
+
+                    {% endif %}
+
+                </p>
+
+            </div>
+
+            <div class="recommendation-box">
+
+                <h3>Security Recommendations</h3>
+
+                <ul>
+
+                    {% if recommendations %}
+
+                        {% for item in recommendations %}
+
+                            <li>{{ item }}</li>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <li>No suspicious indicators detected.</li>
+
+                    {% endif %}
+
+                </ul>
+
+            </div>
+
+            <!-- PDF Download Button -->
+
+            <div style="margin-top:30px;">
+
+                <a href="/download-report">
+
+                    <button type="button">
+
+                        📄 Download PDF Report
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<!--<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
