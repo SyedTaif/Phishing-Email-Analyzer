@@ -63,7 +63,7 @@ The application detects suspicious keywords, extracts embedded URLs, identifies 
 
 ### 📄 PDF Report
 
-![PDF](screenshots/PDF.png)
+![PDF](screenshots/Pdf.png)
 
 ---
 
