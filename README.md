@@ -1,7 +1,7 @@
-<h1 align="center">📧 Phishing Email Analyzer</h1>
+<h1 align="center">🎣 Phishing Email Analyzer</h1>
 
 <p align="center">
-A Python & Flask based web application that analyzes email content to identify phishing indicators such as suspicious keywords and malicious links, then calculates a phishing risk score.
+A Python & Flask based cybersecurity web application that analyzes email content to detect phishing indicators, calculate a phishing risk score, classify threat levels, and generate downloadable PDF security reports.
 </p>
 
 <p align="center">
@@ -28,18 +28,26 @@ A Python & Flask based web application that analyzes email content to identify p
 
 # 📌 Overview
 
-Phishing Email Analyzer is a Flask-based cybersecurity tool that analyzes email content for common phishing indicators. It detects suspicious keywords, identifies embedded URLs, calculates a phishing risk score, and classifies emails into different risk levels.
+Phishing Email Analyzer is a Flask-based cybersecurity web application that analyzes email content to identify common phishing indicators.
+
+The application detects suspicious keywords, extracts embedded URLs, identifies suspicious domains, extracts sender email addresses, evaluates phishing risk, classifies emails into Low, Medium, or High threat levels, and generates a downloadable PDF security report with actionable recommendations.
 
 ---
 
 # ✨ Features
 
-- ✅ Suspicious Keyword Detection
-- ✅ URL Detection
-- ✅ Phishing Risk Score Calculation
-- ✅ Low / Medium / High Risk Classification
-- ✅ Clean & Responsive User Interface
-- ✅ Built with Python & Flask
+- ✅ Phishing Keyword Detection
+- ✅ URL Detection using Regular Expressions (Regex)
+- ✅ Suspicious Domain Detection
+- ✅ Sender Email Extraction
+- ✅ Uppercase Text Detection
+- ✅ Multiple Exclamation Mark Detection
+- ✅ Risk Score Calculation (0–100)
+- ✅ Low / Medium / High Threat Classification
+- ✅ Security Recommendations
+- ✅ PDF Report Download
+- ✅ Character Counter
+- ✅ Responsive User Interface
 
 ---
 
@@ -53,6 +61,10 @@ Phishing Email Analyzer is a Flask-based cybersecurity tool that analyzes email 
 
 ![Result](screenshots/Result.png)
 
+### 📄 PDF Report
+
+![PDF](screenshots/PDF.png)
+
 ---
 
 # 🛠️ Tech Stack
@@ -61,6 +73,8 @@ Phishing Email Analyzer is a Flask-based cybersecurity tool that analyzes email 
 - Flask
 - HTML5
 - CSS3
+- JavaScript
+- ReportLab
 - Regular Expressions (Regex)
 
 ---
@@ -69,18 +83,24 @@ Phishing Email Analyzer is a Flask-based cybersecurity tool that analyzes email 
 
 ```text
 Phishing-Email-Analyzer/
+
 │
 ├── app.py
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
-├── screenshots/
-│   ├── home.png
-│   └── result.png
+│
 ├── templates/
-│   └── phishing.html
-└── static/
-    └── style.css
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+└── screenshots/
+    ├── Home.png
+    ├── Result.png
+    └── PDF.png
 ```
 
 ---
@@ -127,23 +147,39 @@ http://127.0.0.1:5000
 
 # 🔍 Detection Logic
 
-The application analyzes email content using:
+The application analyzes email content using multiple phishing detection techniques:
 
 - Suspicious keyword matching
 - URL extraction using Regular Expressions (Regex)
+- Suspicious domain detection
+- Sender email extraction
+- Uppercase text analysis
+- Multiple exclamation mark detection
 - Risk score calculation
-- Risk classification (Low / Medium / High)
+- Threat level classification
+
+---
+
+# 📄 PDF Report
+
+After analyzing an email, users can download a professional PDF report containing:
+
+- Analysis Result
+- Threat Level
+- Risk Score
+- Security Recommendations
 
 ---
 
 # 🔮 Future Improvements
 
-- Sender Email Verification
-- Domain Reputation Check
-- Attachment Analysis
-- Machine Learning Detection
 - Email Header Analysis
+- .eml File Upload Support
+- SPF / DKIM / DMARC Validation
 - VirusTotal API Integration
+- Domain Reputation Lookup
+- Email Attachment Analysis
+- Machine Learning Based Phishing Detection
 
 ---
 
@@ -160,3 +196,9 @@ The application analyzes email content using:
 ## ⭐ Support
 
 If you found this project useful, consider giving it a ⭐ on GitHub.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
